@@ -37,7 +37,6 @@ function mnemonic() {
   return "";
 }
 
-
 module.exports = {
   defaultNetwork,
 
