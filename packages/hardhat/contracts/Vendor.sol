@@ -25,7 +25,7 @@ contract Vendor is Ownable {
   }
 
   // ToDo: create a withdraw() function that lets the owner withdraw ETH
-  function withdraw() public {
+  function withdraw() public onlyOwner {
     uint256 ownerBalance = address(this).balance;
     require  (ownerBalance > 0, "Need balance to withdraw");
 
@@ -52,4 +52,4 @@ contract Vendor is Ownable {
 
 }
 
-//0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9
+//0x0DCd1Bf9A1b36cE34237eEaFef220932846BCD82
