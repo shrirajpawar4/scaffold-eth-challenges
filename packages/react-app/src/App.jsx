@@ -469,12 +469,11 @@ function App(props) {
     tx(writeContracts.DiceGame.rollTheDice({ value: ethers.utils.parseEther("0.002"), gasLimit: 500000 }), update => {
       if (update?.status === "failed") {
         setDiceRolled(false);
-        //setDiceRollImage(null);
+        setDiceRollImage(null);
       }
     });
   };
 
-  /*
   const riggedRoll = async () => {
     tx(writeContracts.RiggedRoll.riggedRoll({ gasLimit: 500000 }), update => {
       console.log("TX UPDATE", update);
@@ -484,7 +483,7 @@ function App(props) {
       }
       if (update?.status === "failed") {
         setDiceRolled(false);
-        //setDiceRollImage(null);
+        setDiceRollImage(null);
       }
       if (update?.status == 1 || update?.status == "confirmed") {
         setTimeout(() => {
@@ -503,7 +502,7 @@ function App(props) {
       setDiceRolled(false);
     }
   });
-*/
+
 
   const filter = readContracts.DiceGame?.filters.Roll(address, null);
 
